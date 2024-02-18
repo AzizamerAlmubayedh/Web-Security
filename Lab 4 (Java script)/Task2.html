@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Books</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #c142ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #dac5e9d7;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Iterating through the array of books!</h1>
+        <div id="bookList">
+            <!-- This is where the book indices and names will be displayed -->
+        </div>
+
+        <script>
+            // Create an array of famous book names
+            var books = ["To Kill a Mockingbird", "1984", "The Great Gatsby", "Pride and Prejudice", "The Catcher in the Rye", "The Lord of the Rings", "The Hobbit", "Fahrenheit 451", "Harry Potter and the Philosopher's Stone", "The Chronicles of Narnia"];
+
+            // Get a reference to the div where we want to display the book indices and names
+            var bookListDiv = document.getElementById('bookList');
+
+            // Iterate over the array using a for loop
+            for (var i = 0; i < books.length; i++) {
+                // Create a new paragraph element to display the index and book name
+                var paragraph = document.createElement('p');
+                
+                // Set the text content of the paragraph to display the index and book name
+                paragraph.textContent = "Index " + i + ": " + books[i];
+                
+                // Append the paragraph to the div
+                bookListDiv.appendChild(paragraph);
+            }
+        </script>
+    </div>
+</body>
+</html>

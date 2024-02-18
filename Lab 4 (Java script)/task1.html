@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\gaziz\Desktop\WebRepo\Web-Security\Project\styles.css">
+    <style>
+        .container {
+            display:flex !important;
+            flex-direction:column;
+            align-items: center;
+            padding: 10;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Enter 2 numbers</h1>
+        </div>
+        <div>
+            <label>Enter number 1:</label>
+            <input type="text" id="number1" placeholder="Enter here">
+        </div>
+        <div>
+            <label>Enter number 2:</label>
+            <input type="text" id="number2" placeholder="Enter here">
+        </div>
+        <div>
+            <label>result =</label>
+            <input type="text" id="result" disabled>
+        </div>
+    </div>
+
+    <script>
+        // Get references to the input elements and result element
+        const number1Input = document.getElementById('number1');
+        const number2Input = document.getElementById('number2');
+        const resultInput = document.getElementById('result');
+
+        // Add event listeners to input elements to calculate result when input changes
+        number1Input.addEventListener('input', calculateResult);
+        number2Input.addEventListener('input', calculateResult);
+
+        function calculateResult() {
+            // Parse input values as numbers
+            const number1 = parseFloat(number1Input.value);
+            const number2 = parseFloat(number2Input.value);
+
+            // Check if both inputs are valid numbers
+            if (!isNaN(number1) && !isNaN(number2)) {
+                // Calculate the result and display it
+                const result = number1 + number2;
+                resultInput.value = result;
+            } else {
+                // If any input is not a valid number, display an error message
+                resultInput.value = 'Invalid input';
+            }
+        }
+    </script>
+</body>
+</html>
