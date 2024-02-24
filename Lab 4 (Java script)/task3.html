@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #c845f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #dac5e9d7;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1><em><strong>Book Menu</strong></em></h1>
+        </div>
+        <div>
+            <ul id="bookList">
+                <!-- List items will be appended here -->
+            </ul>
+        </div>
+        <div>
+            <p>Enter the book name you want to add:</p>
+            <input type="text" id="bookInput" placeholder="Enter the book name">
+            <button id="appendButton">Append</button>
+            <button id="resetButton">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle appending a new list item
+        function appendListItem() {
+            // Get reference to the ul element
+            var ul = document.getElementById('bookList');
+
+            // Get the value from the input field
+            var bookName = document.getElementById('bookInput').value.trim();
+
+            // Check if the input field is not empty
+            if (bookName !== '') {
+                // Create a new list item
+                var li = document.createElement('li');
+                
+                // Set the content of the list item to the book name
+                li.textContent = bookName;
+
+                // Append the list item to the ul
+                ul.appendChild(li);
+
+                // Clear the input field after appending
+                document.getElementById('bookInput').value = '';
+            }
+        }
+
+        // Get reference to the append button
+        var appendButton = document.getElementById('appendButton');
+
+        // Add event listener to the append button to call appendListItem function when clicked
+        appendButton.addEventListener('click', appendListItem);
+
+        // Get reference to the reset button
+        var resetButton = document.getElementById('resetButton');
+
+        // Add event listener to the reset button to remove all list items from the ul
+        resetButton.addEventListener('click', function() {
+            // Get reference to the ul element
+            var ul = document.getElementById('bookList');
+            
+            // Remove all child elements (list items) from the ul
+            ul.innerHTML = '';
+        });
+
+        // Add event listener to the input field to listen for "keypress" event
+        document.getElementById('bookInput').addEventListener('keypress', function(event) {
+            // Check if the pressed key is "Enter"
+            if (event.keyCode === 13) {
+                // Trigger the button's click event
+                appendButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
