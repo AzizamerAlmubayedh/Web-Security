@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Creation</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* Additional styles specific to this HTML */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #759ab4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        padding: 60px;
+        background-color: #ffffff;
+        border-radius:14px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        align-items:center;
+    }
+    .logo img {
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .input-field {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    .button {
+        background-color: #a4f3c4;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .button:last-child {
+        margin-right: 0;
+    }
+</style>
+<script>
+    function validateForm() {
+        var email = document.getElementById("email").value;
+        var companyDomain = document.getElementById("companyDomain").value;
+        var emailDomain = email.split("@")[1];
+
+        if (emailDomain !== companyDomain) {
+            alert("Email domain must match the company domain.");
+            return false;
+        }
+        return true;
+    }
+    function PasswordValidate()
+    {
+        var password_1 = document.getElementById("password1").value;
+        var password_2 = document.getElementById("password2").value;
+        if(password_1 !== password_2) 
+        {
+            alert("Passwords must match ")
+            return false;
+        }
+        else 
+        {
+            return true;
+        }
+    }
+
+    function changeImage() 
+    {
+        var title = document.getElementsByName("title")[0].value;
+        var image = document.querySelector(".bottom-image img");
+
+        if (title === "Mr") {
+            image.src = "images/loginMr.png";
+        } else {
+            image.src = "images/loginMs.png";
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/Blue.png" alt="Logo">
+        </div>
+        <div class="title">Create Your Account</div>
+        <input class="input-field" type="text" placeholder="Username">
+        
+        <input class="input-field" type="password" placeholder="Password" id ="password1">
+        <input class="input-field" type="password" placeholder="Confirm Password" id="password2">
+        <input class="input-field" type="text" id="companyDomain" placeholder="Company Domain Name">
+        <input class="input-field" type="email" id="email" placeholder="Email">
+        <input class="input-field" type="text" placeholder="Company Name">
+        
+        
+        <select class="input-field" name="title" style="padding: 10px" onchange="changeImage()">
+                <option value="Ms">Ms</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Mr">Mr</option>
+        </select>
+        <div class="bottom-image">
+            <img src="images/loginMs.png" style="width: 40px; margin-top:px ; margin-bottom: 15px">
+        </div>
+
+            
+      
+        
+        <button class="button" type="submit" onclick="return validateForm() &&  PasswordValidate()">Create Account</button>
+    </div>
+</body>
+</html>
