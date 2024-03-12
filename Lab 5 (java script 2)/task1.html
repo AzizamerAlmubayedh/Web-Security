@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #438ee4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #2c8b9c;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #41ae8b;
+            border-radius: 5px;
+            width: 100%;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+    <div class="container">
+
+        <h1>Enter your letter please?</h1>
+        <label for="input">Enter the thing:</label>
+        <input type="text" name="input" id="input">
+    </div>
+
+    <script>
+        var input = document.getElementById('input');
+
+        input.addEventListener('click', function() {
+            input.style.backgroundColor = "#41ae8b";
+        });
+
+        input.addEventListener('input', function() {
+            // Capitalize first letter only
+            input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+        });
+    </script>
+</body>
+</html>
