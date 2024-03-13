@@ -1,3 +1,4 @@
+<?php  include './include/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,12 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Heelo</h1>
-    <?php
-
-        echo "hello world";
-
-    ?>
-    
+        <h1>Home</h1>
+        <h2>Working 👌</h2>
 </body>
 </html>
+
+
+<?php include './include/footer.php'; ?>

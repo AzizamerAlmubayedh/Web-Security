@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Heelo</h1>
-    <?php
-
-        echo "hello world";
-
-    ?>
-    
+        
 </body>
+<footer>
+        <p>  &copy; Abdulaziz Amer</p>
+</footer>
 </html>
