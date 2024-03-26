@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Is capsLock activated?: </h1>
+
+    <input type="text" id="input" onkeydown="focused()">
+
+    <p id="output"></p>
+
+    <script>
+        function focused() {
+            var output = document.getElementById("output");
+            var input = document.getElementById("input");
+
+            // Check if Caps Lock key is pressed
+            if (event.getModifierState("CapsLock")) {
+                output.innerHTML = "CapsLock is ON!!";
+            } else {
+                output.innerHTML = "CAPSLOCK is OFF ;(";
+            }
+        }
+    </script>
+    
+</body>
+</html>

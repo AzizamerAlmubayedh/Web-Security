@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Capitalize the first letter</h1>
+
+    <label for="input">Enter the word:   </label>
+    <input type="text" id="input" oninput="capitalizeFirstLetter()">
+
+    <script>
+        function capitalizeFirstLetter() {
+            var input = document.getElementById("input");
+            input.style.backgroundColor ="lightBlue";
+
+
+            input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1)
+            
+        }
+    </script>
+</body>
+</html>

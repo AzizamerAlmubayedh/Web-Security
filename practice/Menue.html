@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Drinks Menu</h1>
+
+    <ul id="ul">
+        <li>Coffee</li> <!-- Corrected typo -->
+        <li>Tea</li>
+    </ul>
+
+    <input type="submit" value="Append" onclick="add()">
+
+    <script>
+        function add() {
+            var ul = document.getElementById("ul"); // Corrected method name
+            var li = document.createElement("li");
+            var water = document.createTextNode("Water");
+            li.appendChild(water);
+            ul.appendChild(li);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Display the Current Click Count</h1>
+
+    <input type="submit" value="Click count:    " onclick="counT()">
+    <input type="tel" name="" id="output">
+    <input type="reset" value="Reset" onclick="reset()">
+
+
+    <script>
+        var counter = 0;
+        var output = document.getElementById("output");
+        function counT()
+        {
+            counter += 1;
+            output.value = counter
+        }
+
+        function reset()
+        {
+            output.value = 0;
+
+        }
+
+    </script>
+
+
+    
+</body>
+</html>

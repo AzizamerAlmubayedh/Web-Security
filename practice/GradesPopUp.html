@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Marks of the students</h1>
+    <h2>Click the button to check your mark:</h2>
+    
+    <button type="button" onclick="result()">Click me</button>
+
+    <p id="mark"></p>
+    <p id="grade"></p>    
+
+    <script>
+        function result() {
+            var input = prompt("Please enter your mark:");
+            var mark = document.getElementById("mark");
+            var grade = document.getElementById("grade");
+            
+            if (!isNaN(input) && input >= 0 && input <= 100) {
+                var parsedInput = parseInt(input);
+                mark.innerHTML = parsedInput;
+
+                if (parsedInput >= 90) {
+                    grade.innerHTML = "A";
+                } else if (parsedInput >= 80 && parsedInput < 90) {
+                    grade.innerHTML = "B";
+                } else if (parsedInput >= 70 && parsedInput < 80) {
+                    grade.innerHTML = "C";
+                } else if (parsedInput >= 60 && parsedInput < 70) {
+                    grade.innerHTML = "D";
+                } else {
+                    grade.innerHTML = "F";
+                }
+            } else {
+                alert("Please enter a valid mark between 0 and 100.");
+            }
+        }
+    </script>
+</body>
+</html>
