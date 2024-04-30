@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click the button to swap the text of the DIV element: </p>
+    <input type="submit" value=Click+Me" onclick="swap()">
+    <div>
+        <p id ="swap">Bye!</p>
+    </div>
+    
+
+
+    <script>
+        function swap()
+        {
+            var p = document.getElementById("swap");
+            
+            if (p.innerHTML == "Hello!")
+            {
+                p.innerHTML="Bye!";
+            }
+            else if (p.innerHTML == "Bye!")
+            {
+                p.innerHTML="Hello!";
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

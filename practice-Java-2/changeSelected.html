@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Select your perfered major:
+    </h1>
+
+    <select id="choice"  onchange="change()">
+        <option  value="CS">Computer Science</option>
+        <option  value="CYS">Cybersecurity</option>
+        <option  value="CIS">Computer information system</option>
+        <option  value="AI">Artificial intellignce</option>
+    </select>
+
+    <p id="output"></p>
+    
+
+    <script>
+        function change() 
+        {
+            var choice = document.getElementById("choice").value;
+            var output = document.getElementById("output");
+            output.innerHTML = "You have selected: "+ choice;
+        }
+
+
+    </script>
+</body>
+</html>

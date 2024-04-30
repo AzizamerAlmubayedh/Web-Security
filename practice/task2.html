@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Iterate through an array</h1>
+    <p id="array"></p>
+    
+    <script>
+        function Iterate() {
+            var myarray = [53,"Canada", true, 1420];
+            var p = document.getElementById("array");
+            var string = "";
+
+            for(var i = 0; i < myarray.length; i++) {
+                string += `myarray[${i}] = ${myarray[i]} <br>`;
+            }
+
+            p.innerHTML = string;
+        }
+    </script>
+    
+    <button type="button" onclick="Iterate()">Iterate</button>
+    
+</body>
+</html>
