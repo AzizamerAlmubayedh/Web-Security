@@ -1,0 +1,25 @@
+.error {
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.topproductheader {
+  text-align: center;
+  font-size: 200%;
+  background-color: #36407F;
+  color: #FFFFFF;
+} 
+
+.product{
+  font-size:150%;
+  color: #36407F;
+}
+.price{
+  font-size:150%;
+  color: #36407F;
+}
+
+.productinfo{
+  vertical-align: top;
+  padding-right:15px;
+}
